@@ -42,6 +42,40 @@
         <img src="./img/dice.png" alt="dice-cover" class="dice" id="dice">
         <button type="button" class="roll-btn" onclick="rollDice()"> Dice Roller </button>
     </div>
-    
+    <script>
+        function resetDice(){
+            const diceImg = document.getElementById('dice');
+            diceImg.src ='./img/dice.png';
+        }
+     function rollDice(){
+        const min = 1;
+        const max = 6;
+
+        const randomNum =Math.round(Math.random()*(max-min))+min;
+        const diceImg = document.getElementById('dice');
+
+        if(randomNum == 1){
+            diceImg.src = './img/one.png';
+        }
+        else if (randomNum == 2){
+            diceImg.src = './img/two.png';
+        }
+        else if (randomNum == 3){
+            diceImg.src = './img/three.png';
+        }
+        else if (randomNum == 4){
+            diceImg.src = './img/four.png';
+        }
+        else if (randomNum == 5){
+            diceImg.src = './img/five.png';
+        }
+        else if (randomNum == 6){
+            diceImg.src = './img/six.png';
+        }
+        setTimeout(resetDice, 2000);
+    }
+
+</script>
+
 </body>
 </html>
